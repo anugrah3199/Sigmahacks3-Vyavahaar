@@ -26,10 +26,6 @@ A user will be classified as one of the following categories:
 ### Landing page 
 It will contain an overview of all the funcitonalities.
 ![image](https://drive.google.com/uc?export=view&id=1dtMganqG0e2JRMB4WUP8Unj0PSjPASyC)
-### Login page
-![image](https://drive.google.com/uc?export=view&id=1MSRqvYl5VXjgXwJsc6m74yUzWVlzdf2o)
-### Questionnaire
-![image](https://drive.google.com/uc?export=view&id=1te15wqQIzsb93yo_8ZfZ4ZulxzqJbvtc)
 ### Vent out
 This will show our community interaction.
 ![image](https://drive.google.com/uc?export=view&id=1RBUk4eawrfYKm8_wbijvxoOQPYBhUCZt)
