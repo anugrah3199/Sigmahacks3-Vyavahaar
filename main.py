@@ -4,7 +4,7 @@ from fastapi.responses import HTMLResponse
 import aiofiles
 import shutil
 import os
-#from fer import FER
+from fer import FER
 import matplotlib.pyplot as plt
 
 app = FastAPI()
@@ -30,7 +30,7 @@ async def getlogin():
     return data
 
 @app.get("/signup", response_class=HTMLResponse)
-async def getlogin():
+async def getsignup():
     async with aiofiles.open("templates/sign-up.html", mode="r") as f:
         data = await f.read()
     return data
@@ -104,7 +104,6 @@ async def postQuestionnaire(
     return data.replace('<!-- anxiety-score -->', anxietyLabel).replace('<!-- stress-score -->', stressLabel).replace('<!-- depression-score -->', depressionLabel)
 
 
-
 @app.get("/questionnaire/selfHelpAnxiety", response_class=HTMLResponse)
 async def getanxiety():
     async with aiofiles.open("templates/anxiety.html", mode="r") as f:
@@ -145,3 +144,29 @@ async def getabout():
     async with aiofiles.open("templates/about.html", mode="r") as f:
         data = await f.read()
     return data
+
+@app.post("/upload")
+def upload_save(image: UploadFile = File(...)):
+    save_file(image, path="temp/", save_as="temp")
+    return{"text": "File Uploaded Successfully"}
+
+
+@app.post("/predict")
+def emotions():
+    img = plt.imread("temp/temp.jpg")
+    detector = FER(mtcnn=True)
+    key_value = detector.detect_emotions(img)[0]['emotions']
+    emo = {}
+    sorted_keys = sorted(key_value, key=key_value.get, reverse=True)
+    for w in sorted_keys:
+        emo[w] = key_value[w]
+    emotions = list(emo.keys())[0:3]
+    return {"emo": emotions}
+
+
+def save_file(uploaded_file, path=".", save_as="default"):
+    extension = os.path.splitext(uploaded_file.filename)[-1]
+    temp_file = os.path.join(path, save_as + extension)
+    with open(temp_file, "wb") as buffer:
+        shutil.copyfileobj(uploaded_file.file, buffer)
+    return temp_file
