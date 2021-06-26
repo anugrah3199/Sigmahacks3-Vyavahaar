@@ -22,13 +22,6 @@ A user will be classified as one of the following categories:
 2. python3 -m pip install -r requirements.txt
 3. uvicorn main:app --reload
 
-# Site Screenshots
-### Landing page 
-It will contain an overview of all the funcitonalities.
-![image](https://drive.google.com/uc?export=view&id=1dtMganqG0e2JRMB4WUP8Unj0PSjPASyC)
-### Vent out
-This will show our community interaction.
-![image](https://drive.google.com/uc?export=view&id=1RBUk4eawrfYKm8_wbijvxoOQPYBhUCZt)
 # Built With
 - [FastAPI](https://fastapi.tiangolo.com/) - _FastAPI_ is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 - [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - _jQuery_ simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
