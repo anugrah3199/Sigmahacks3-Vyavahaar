@@ -7,12 +7,6 @@
 <tr>
 <td>
 A web app using FastAPI to help to diagnose the mental health of a person. It helps to quantify the mental health among three parameters: stress, anxiety and depression, with the help of a specially designed questionnaire containing questions related to the defined parameters. Emotion detection is implemented to get an overview of the person's emotions in real time.  <br><br> A user will first have to register on the website after which they will be eligible for taking the questionnaire and emotional detection functionalities. A vent out wall is implemented on the website on which any person can share their thoughts and experiences with the community, anonymously.  On the basis of the scores taken from the questionnaire the mental state of the person will be approximated. The results do not guarantee anything, and it is easy to generate fake report, therefore we are relying on the user to answer the questionnaire punctually.<br><br>
-A user will be classified as one of the following categories:
-<ul>
-<li>Self help, in this case, it will be known that user is not going through serious mental stress therefore, the user will be suggested few blogs and videos to cheer up.</li>
-<li>Needs counselling, in this case, it is felt that the user is holding in a lot of thoughts which are leading to mental stress and anxiety, the user will therefore be brought in contact with our counselors, who can contact the user through texts or if user agrees to, through calls.</li>
-<li>Therapy, in this case, it is found that the user is going through serious mental problems, and it is suggested that he/she should seek professional help. The user will be brought in contact with professionals through the counselors.</li>
-</ul> 
 </td>
 </tr>
 </table>
