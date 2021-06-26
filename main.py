@@ -17,11 +17,14 @@ async def getRoot():
     async with aiofiles.open("templates/", mode="r") as f:
         data = await f.read()
     return data
+
+
 @app.get("/user", response_class=HTMLResponse)
 async def getUser():
     async with aiofiles.open("templates/", mode="r") as f:
         data = await f.read()
     return data
+
 
 @app.get("/login", response_class=HTMLResponse)
 async def getlogin():
@@ -29,23 +32,27 @@ async def getlogin():
         data = await f.read()
     return data
 
+
 @app.get("/signup", response_class=HTMLResponse)
-async def getlogin():
+async def getsignup():
     async with aiofiles.open("templates/", mode="r") as f:
         data = await f.read()
     return data
 
+
 @app.get("/photo", response_class=HTMLResponse)
 async def getPhoto():
-    async with aiofiles.open("templates/", mode="r") as f:
+    async with aiofiles.open("templates/capture.html", mode="r") as f:
         data = await f.read()
     return data
-    
+
+
 @app.get('/detect', response_class=HTMLResponse)
 async def proceed():
     async with aiofiles.open("templates/", mode="r") as f:
         data = await f.read()
     return data
+
 
 @app.get("/questionnaire", response_class=HTMLResponse)
 async def getQuestionnaireHome():
@@ -101,4 +108,3 @@ async def getabout():
     async with aiofiles.open("templates/", mode="r") as f:
         data = await f.read()
     return data
-
