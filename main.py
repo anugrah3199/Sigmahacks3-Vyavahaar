@@ -142,6 +142,6 @@ async def gethelp():
 
 @app.get("/about", response_class=HTMLResponse)
 async def getabout():
-    async with aiofiles.open("templates/", mode="r") as f:
+    async with aiofiles.open("templates/about.html", mode="r") as f:
         data = await f.read()
     return data
