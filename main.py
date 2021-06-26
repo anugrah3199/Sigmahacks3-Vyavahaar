@@ -107,21 +107,21 @@ async def postQuestionnaire(
 
 @app.get("/questionnaire/selfHelpAnxiety", response_class=HTMLResponse)
 async def getanxiety():
-    async with aiofiles.open("templates/", mode="r") as f:
+    async with aiofiles.open("templates/anxiety.html", mode="r") as f:
         data = await f.read()
     return data
 
 
 @app.get("/questionnaire/selfHelpDepp", response_class=HTMLResponse)
 async def getdepression():
-    async with aiofiles.open("templates/", mode="r") as f:
+    async with aiofiles.open("templates/depression.html", mode="r") as f:
         data = await f.read()
     return data
 
 
 @app.get("/questionnaire/selfHelpStress", response_class=HTMLResponse)
 async def getstress():
-    async with aiofiles.open("templates/", mode="r") as f:
+    async with aiofiles.open("templates/stress.html", mode="r") as f:
         data = await f.read()
     return data
 
