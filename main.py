@@ -135,7 +135,7 @@ async def getVent():
 
 @app.get("/gethelp", response_class=HTMLResponse)
 async def gethelp():
-    async with aiofiles.open("templates/", mode="r") as f:
+    async with aiofiles.open("templates/counsel_index.html", mode="r") as f:
         data = await f.read()
     return data
 
